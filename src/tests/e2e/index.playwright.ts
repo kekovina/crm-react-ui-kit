@@ -47,9 +47,9 @@ export const test = testBase.extend<TestOptions>({
     testInfo
   ) => {
     const getFileName = () => {
-      return [testInfo.title, platform, browserName, appearance, 'snap.png']
-        .join('-')
-        .toLowerCase();
+      const screenName = testInfo.title.toLowerCase().replace(/\s+/g, '-');
+
+      return [platform, browserName, appearance, `${screenName}.png`];
     };
 
     await use(getFileName);
