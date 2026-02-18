@@ -2,12 +2,12 @@ import React from 'react';
 
 import {
   ComponentPlaygroundItem,
-  ComponentPlaygroundProps,
+  ComponentPlaygroundItemProps,
 } from 'src/tests/e2e/ComponentPlayground';
 
-import { IconsMap } from '@storybook-utils/constants';
-
 import { multiCartesian } from 'src/tests/e2e/utils';
+
+import { IconsMap } from '@storybook-utils/constants';
 
 import {
   Button,
@@ -17,75 +17,53 @@ import {
   type ButtonProps,
 } from '..';
 
-const defaultCombinations = multiCartesian<ButtonProps>([
-  { isLoading: [true, false], isDisabled: [true, false] },
-]);
+export const combinations: ButtonProps[] = [
+  ...multiCartesian<ButtonProps>([
+    { isLoading: [true, false], isDisabled: [true, false] },
+  ]),
+  ...multiCartesian<ButtonProps>([
+    {
+      before: [IconsMap.CalendarIcon, undefined],
+      after: [IconsMap.CopyIcon, undefined],
+    },
+  ]),
+];
 
-const iconsCombinations = multiCartesian<ButtonProps>([
-  {
-    before: [IconsMap.CalendarIcon, undefined],
-    after: [IconsMap.CopyIcon, undefined],
-  },
-]);
-
-const combinations = [...defaultCombinations, ...iconsCombinations];
-
-export const ButtonNeutralPlayground = ({
+export const ButtonNeutralPlaygroundItem = ({
   appearance,
-}: ComponentPlaygroundProps<ButtonProps>) => (
-  <>
-    {combinations.map((itemProps, i) => (
-      <ComponentPlaygroundItem<ButtonProps>
-        key={i}
-        appearance={appearance}
-        props={itemProps}
-      >
-        {(p) => (
-          <Button {...p} theme={ButtonNeutralTheme}>
-            Button
-          </Button>
-        )}
-      </ComponentPlaygroundItem>
-    ))}
-  </>
+  props,
+}: ComponentPlaygroundItemProps<ButtonProps>) => (
+  <ComponentPlaygroundItem<ButtonProps> appearance={appearance} props={props}>
+    {(p) => (
+      <Button {...p} theme={ButtonNeutralTheme}>
+        Button
+      </Button>
+    )}
+  </ComponentPlaygroundItem>
 );
 
-export const ButtonPrimaryPlayground = ({
+export const ButtonPrimaryPlaygroundItem = ({
   appearance,
-}: ComponentPlaygroundProps<ButtonProps>) => (
-  <>
-    {combinations.map((itemProps, i) => (
-      <ComponentPlaygroundItem<ButtonProps>
-        key={i}
-        appearance={appearance}
-        props={itemProps}
-      >
-        {(p) => (
-          <Button {...p} theme={ButtonPrimaryTheme}>
-            Button
-          </Button>
-        )}
-      </ComponentPlaygroundItem>
-    ))}
-  </>
+  props,
+}: ComponentPlaygroundItemProps<ButtonProps>) => (
+  <ComponentPlaygroundItem<ButtonProps> appearance={appearance} props={props}>
+    {(p) => (
+      <Button {...p} theme={ButtonPrimaryTheme}>
+        Button
+      </Button>
+    )}
+  </ComponentPlaygroundItem>
 );
 
-export const ButtonSecondaryPlayground = ({
+export const ButtonSecondaryPlaygroundItem = ({
   appearance,
-}: ComponentPlaygroundProps<ButtonProps>) => (
-  <>
-    {combinations.map((itemProps, i) => (
-      <ComponentPlaygroundItem<ButtonProps>
-        key={i}
-        appearance={appearance}
-        props={itemProps}
-      >
-        {(p) => (
-          <Button {...p} theme={ButtonSecondaryTheme}>
-            Button
-          </Button>
-        )}
-      </ComponentPlaygroundItem>
-    ))}
-  </>
+  props,
+}: ComponentPlaygroundItemProps<ButtonProps>) => (
+  <ComponentPlaygroundItem<ButtonProps> appearance={appearance} props={props}>
+    {(p) => (
+      <Button {...p} theme={ButtonSecondaryTheme}>
+        Button
+      </Button>
+    )}
+  </ComponentPlaygroundItem>
 );
