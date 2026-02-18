@@ -53,6 +53,17 @@ export function prettyProps(props: any) {
         return `${prop}=<jsx>`;
       }
 
+      /*
+       * playwright подменяет реакт объекты своей реализацией
+       */
+      if (
+        typeof value === 'object' &&
+        value !== null &&
+        Object.hasOwn(value, '__pw_type')
+      ) {
+        return `${prop}=<jsx>`;
+      }
+
       if (prop === 'style' || prop === 'src' || prop === 'photos') {
         const _value = JSON.stringify(value);
 
