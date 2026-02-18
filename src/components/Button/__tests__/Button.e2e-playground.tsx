@@ -18,23 +18,48 @@ import {
 } from '..';
 
 export const combinations = multiCartesian<ButtonProps>([
-  {
-    isLoading: [true, false],
-    isDisabled: [true, false],
-    theme: [ButtonNeutralTheme, ButtonPrimaryTheme, ButtonSecondaryTheme],
-  },
+  { isLoading: [true, false], isDisabled: [true, false] },
   {
     before: [IconsMap.CalendarIcon, undefined],
     after: [IconsMap.CopyIcon, undefined],
-    theme: [ButtonNeutralTheme, ButtonPrimaryTheme, ButtonSecondaryTheme],
   },
 ]);
 
-export const ButtonPlaygroundItem = ({
+export const ButtonNeutralPlaygroundItem = ({
   appearance,
   props,
 }: ComponentPlaygroundItemProps<ButtonProps>) => (
   <ComponentPlaygroundItem<ButtonProps> appearance={appearance} props={props}>
-    {(p) => <Button {...p}>Button</Button>}
+    {(p) => (
+      <Button {...p} theme={ButtonNeutralTheme}>
+        Button
+      </Button>
+    )}
+  </ComponentPlaygroundItem>
+);
+
+export const ButtonPrimaryPlaygroundItem = ({
+  appearance,
+  props,
+}: ComponentPlaygroundItemProps<ButtonProps>) => (
+  <ComponentPlaygroundItem<ButtonProps> appearance={appearance} props={props}>
+    {(p) => (
+      <Button {...p} theme={ButtonPrimaryTheme}>
+        Button
+      </Button>
+    )}
+  </ComponentPlaygroundItem>
+);
+
+export const ButtonSecondaryPlaygroundItem = ({
+  appearance,
+  props,
+}: ComponentPlaygroundItemProps<ButtonProps>) => (
+  <ComponentPlaygroundItem<ButtonProps> appearance={appearance} props={props}>
+    {(p) => (
+      <Button {...p} theme={ButtonSecondaryTheme}>
+        Button
+      </Button>
+    )}
   </ComponentPlaygroundItem>
 );
