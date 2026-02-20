@@ -3,7 +3,7 @@ import React from 'react';
 import {
   ComponentPlaygroundItem,
   ComponentPlaygroundItemProps,
-} from 'src/tests/e2e/ComponentPlayground';
+} from 'src/tests/e2e/ComponentPlaygroundItem';
 
 import { multiCartesian } from 'src/tests/e2e/utils';
 
