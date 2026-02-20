@@ -33,6 +33,14 @@ export function multiCartesian<Props>(
   );
 }
 
+function isPlaywrightComponent(object: Record<string, any>) {
+  return (
+    typeof object === 'object' &&
+    object !== null &&
+    Object.hasOwn(object, '__pw_type')
+  );
+}
+
 export function prettyProps(props: any) {
   return Object.entries(props)
     .sort(([key1], [key2]) => Number(key1 > key2))
@@ -53,13 +61,10 @@ export function prettyProps(props: any) {
         return `${prop}=<jsx>`;
       }
 
-      /*
-       * playwright подменяет реакт объекты своей реализацией
-       */
       if (
-        typeof value === 'object' &&
-        value !== null &&
-        Object.hasOwn(value, '__pw_type')
+        isPlaywrightComponent(value) ||
+        (Array.isArray(value) &&
+          value.every((node: any) => isPlaywrightComponent(node)))
       ) {
         return `${prop}=<jsx>`;
       }
