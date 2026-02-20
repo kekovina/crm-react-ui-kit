@@ -1,5 +1,6 @@
-import { test as testBase, expect } from '@playwright/experimental-ct-react';
 import { createHash } from 'crypto';
+
+import { test as testBase, expect } from '@playwright/experimental-ct-react';
 
 import { Appearance } from 'src/lib/appearance';
 
