@@ -47,7 +47,10 @@ export const test = testBase.extend<TestOptions>({
     testInfo
   ) => {
     const getFileName = () => {
-      const screenName = testInfo.title.toLowerCase().replace(/\s+/g, '-');
+      const screenName = testInfo.titlePath
+        .filter((path) => !/.+\.ts(x)?$/.test(path))
+        .map((path) => path.toLowerCase().replace(/\s+/g, '-'))
+        .join('-');
 
       return [platform, browserName, appearance, `${screenName}.png`];
     };
