@@ -2,14 +2,25 @@ import React from 'react';
 
 import { test } from '@crm-react-ui-kit-e2e/test';
 
-import { prettyProps } from 'src/tests/e2e/utils';
+import { multiCartesian, prettyProps } from 'src/tests/e2e/utils';
+
+import { IconsMap } from '@storybook-utils/constants';
+
+import { ButtonProps } from '../Button.props';
 
 import {
   ButtonNeutralPlaygroundItem,
   ButtonPrimaryPlaygroundItem,
   ButtonSecondaryPlaygroundItem,
-  combinations,
 } from './Button.e2e-playground';
+
+export const combinations = multiCartesian<ButtonProps>([
+  { isLoading: [true, false], isDisabled: [true, false] },
+  {
+    before: [IconsMap.CalendarIcon, undefined],
+    after: [IconsMap.CopyIcon, undefined],
+  },
+]);
 
 for (const props of combinations) {
   const label = prettyProps(props);

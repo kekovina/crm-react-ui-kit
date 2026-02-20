@@ -5,10 +5,6 @@ import {
   ComponentPlaygroundItemProps,
 } from 'src/tests/e2e/ComponentPlaygroundItem';
 
-import { multiCartesian } from 'src/tests/e2e/utils';
-
-import { IconsMap } from '@storybook-utils/constants';
-
 import {
   Button,
   ButtonNeutralTheme,
@@ -17,26 +13,20 @@ import {
   type ButtonProps,
 } from '..';
 
-export const combinations = multiCartesian<ButtonProps>([
-  { isLoading: [true, false], isDisabled: [true, false] },
-  {
-    before: [IconsMap.CalendarIcon, undefined],
-    after: [IconsMap.CopyIcon, undefined],
-  },
-]);
-
 export const ButtonNeutralPlaygroundItem = ({
   appearance,
   props,
-}: ComponentPlaygroundItemProps<ButtonProps>) => (
-  <ComponentPlaygroundItem<ButtonProps> appearance={appearance} props={props}>
-    {(p) => (
-      <Button {...p} theme={ButtonNeutralTheme}>
-        Button
-      </Button>
-    )}
-  </ComponentPlaygroundItem>
-);
+}: ComponentPlaygroundItemProps<ButtonProps>) => {
+  return (
+    <ComponentPlaygroundItem<ButtonProps> appearance={appearance} props={props}>
+      {(p) => (
+        <Button {...p} theme={ButtonNeutralTheme}>
+          Button
+        </Button>
+      )}
+    </ComponentPlaygroundItem>
+  );
+};
 
 export const ButtonPrimaryPlaygroundItem = ({
   appearance,
