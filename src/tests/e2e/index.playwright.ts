@@ -1,4 +1,5 @@
 import { test as testBase, expect } from '@playwright/experimental-ct-react';
+import { createHash } from 'crypto';
 
 import { Appearance } from 'src/lib/appearance';
 
@@ -52,7 +53,9 @@ export const test = testBase.extend<TestOptions>({
         .map((path) => path.toLowerCase().replace(/\s+/g, '-'))
         .join('-');
 
-      return [platform, browserName, appearance, `${screenName}.png`];
+      const hash = createHash('md5').update(screenName, 'utf8').digest('hex');
+
+      return [platform, browserName, appearance, `${hash}.png`];
     };
 
     await use(getFileName);
