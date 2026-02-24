@@ -1,4 +1,4 @@
-import { createHash } from 'crypto';
+import hash from 'hash-sum';
 
 import { test as testBase, expect } from '@playwright/experimental-ct-react';
 
@@ -49,14 +49,18 @@ export const test = testBase.extend<TestOptions>({
     testInfo
   ) => {
     const getFileName = () => {
-      const screenName = testInfo.titlePath
+      const [testName, props] = testInfo.titlePath
         .filter((path) => !/.+\.ts(x)?$/.test(path))
-        .map((path) => path.toLowerCase().replace(/\s+/g, '-'))
-        .join('-');
+        .map((path) => path.toLowerCase().replace(/\s+/g, '-'));
 
-      const hash = createHash('md5').update(screenName, 'utf8').digest('hex');
+      const hashedProps = hash(props);
 
-      return [platform, browserName, appearance, `${hash}.png`];
+      return [
+        platform,
+        browserName,
+        appearance,
+        `${testName}-${hashedProps}.png`,
+      ];
     };
 
     await use(getFileName);
