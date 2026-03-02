@@ -1,4 +1,4 @@
-import React from 'react';
+import { isValidElement } from 'react';
 
 type TestProps<Props> = Array<Props>;
 type PropDesc<Props> = { [K in keyof Props]?: Array<Props[K]> };
@@ -33,7 +33,7 @@ export function multiCartesian<Props>(
   );
 }
 
-function isPlaywrightComponent(object: Record<string, any>) {
+function isPlaywrightWrappedComponent(object: Record<string, any>) {
   return (
     typeof object === 'object' &&
     object !== null &&
@@ -54,17 +54,15 @@ export function prettyProps(props: any) {
       }
 
       if (
-        React.isValidElement(value) ||
-        (Array.isArray(value) &&
-          value.every((node: any) => React.isValidElement(node)))
+        isValidElement(value) ||
+        (Array.isArray(value) && value.every(isValidElement))
       ) {
         return `${prop}=<jsx>`;
       }
 
       if (
-        isPlaywrightComponent(value) ||
-        (Array.isArray(value) &&
-          value.every((node: any) => isPlaywrightComponent(node)))
+        isPlaywrightWrappedComponent(value) ||
+        (Array.isArray(value) && value.every(isPlaywrightWrappedComponent))
       ) {
         return `${prop}=<jsx>`;
       }
