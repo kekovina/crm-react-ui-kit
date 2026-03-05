@@ -6,10 +6,7 @@ import { Appearance } from 'src/lib/appearance';
 import { prettyProps } from './utils';
 import { TEST_CLASS_NAMES } from './constants';
 
-const playgroundWrapperStyle: React.CSSProperties = {
-  border: '8px solid var(--playwright-border)',
-  background: 'var(--playwright-background)',
-};
+import 'src/stylesheets/playwright/index.css';
 
 export interface InternalComponentPlaygroundItemProps<Props> {
   /**
@@ -42,7 +39,7 @@ export const ComponentPlaygroundItem = <P extends object>({
 }: InternalComponentPlaygroundItemProps<P>) => {
   return (
     <ConfigProvider appearance={appearance}>
-      <div style={playgroundWrapperStyle}>
+      <div className="component-playground">
         <div className={TEST_CLASS_NAMES.PARAMS_CONTENT}>
           {prettyProps(itemProps)}
         </div>
