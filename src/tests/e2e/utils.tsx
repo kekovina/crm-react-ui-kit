@@ -60,6 +60,16 @@ export function prettyProps(props: any) {
         return `${prop}=<jsx>`;
       }
 
+      /*
+       * In Playwright CT, the test runner compiles JSX via a Vite plugin that
+       * transforms React elements into a serializable `{ __pw_type }` format so
+       * they can be transferred from the Node.js test context to the browser.
+       * This means that when `prettyProps` is called at test-name generation time
+       * (before `mount()`), JSX props are already wrapped objects rather than
+       * valid React elements — so `isValidElement` returns false for them.
+       * We handle both representations here to produce a consistent label
+       * regardless of which context `prettyProps` is running in.
+       */
       if (
         isPlaywrightWrappedComponent(value) ||
         (Array.isArray(value) && value.every(isPlaywrightWrappedComponent))
