@@ -10,7 +10,6 @@
     "./playwright-ct.config.ts",
     "./jest.config.ts",
     "./playwright",
-    "./locales",
     "./src/**/*.e2e-playground.tsx",
     "./src/**/*.test.tsx",
     "./src/**/*.stories.tsx",

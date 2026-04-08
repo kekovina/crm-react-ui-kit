@@ -7,7 +7,7 @@ import {
   Langs,
 } from '../src/utils';
 
-import locales from '../../ui-kit/locales';
+import locales from '../src/locales';
 
 i18n.use(LanguageDetector).init({
   supportedLngs: SUPPORTED_LANGUAGES,

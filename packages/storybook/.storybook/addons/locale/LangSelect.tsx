@@ -14,7 +14,6 @@ import {
   LOCALE_LIST,
   Langs,
 } from '../../../src/utils';
-
 export const LangSelect = () => {
   const [locale, setLocale] = useState(INITIAL_LANGUAGE);
 
