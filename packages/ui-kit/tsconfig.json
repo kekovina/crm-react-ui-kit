@@ -23,6 +23,6 @@
       "@crm-react-ui-kit-e2e/test": ["./src/tests/e2e/index.playwright"]
     }
   },
-  "include": ["./**/*.tsx", "./**/*.ts", "./.storybook/**/*"],
+  "include": ["./**/*.tsx", "./**/*.ts"],
   "exclude": ["node_modules"]
 }

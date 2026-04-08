@@ -13,15 +13,24 @@
     "isolatedModules": true,
     "declaration": true,
     "declarationMap": true,
+    "rootDir": "..",
     "outDir": "./dist/",
     "module": "esnext",
     "target": "esnext",
     "jsx": "react",
     "moduleResolution": "bundler",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "src/*": ["../ui-kit/src/*"]
     }
   },
-  "include": ["./**/*.tsx", "./**/*.ts", "./.storybook/**/*"],
+  "include": [
+    "./**/*.d.ts",
+    "./**/*.tsx",
+    "./**/*.ts",
+    "./.storybook/**/*",
+    "../ui-kit/src/icons/svg.d.ts",
+    "../ui-kit/src/stylesheets/styles.d.ts"
+  ],
   "exclude": ["node_modules"]
 }
