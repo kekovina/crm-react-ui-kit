@@ -7,10 +7,10 @@ import {
   WithGridProvider,
 } from '@kommo-crm/storybook/decorators';
 
-import 'src/stylesheets/theme.css';
-import 'src/stylesheets/icons.css';
-import 'src/stylesheets/index.css';
-import '../../ui-kit/public/fonts/ptsans.css';
+import '@ui-kit/stylesheets/theme.css';
+import '@ui-kit/stylesheets/icons.css';
+import '@ui-kit/stylesheets/index.css';
+import '@ui-kit/public/fonts/ptsans.css';
 
 const preview: Preview = {
   tags: [],

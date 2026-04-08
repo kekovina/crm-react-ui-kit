@@ -9,8 +9,8 @@ import {
   Text,
   TextPrimaryTheme,
   TextSecondaryLightTheme,
-} from 'src/components/Text';
-import { Label, LabelTheme } from 'src/components/Label';
+} from '@/components/Text';
+import { Label, LabelTheme } from '@/components/Label';
 
 import {
   RadioPrimaryTheme,

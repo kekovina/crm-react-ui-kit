@@ -20,8 +20,8 @@
     "jsx": "react",
     "moduleResolution": "bundler",
     "paths": {
-      "@/*": ["./src/*"],
-      "src/*": ["../ui-kit/src/*"]
+      "@sb/*": ["./src/*"],
+      "@ui-kit/*": ["../ui-kit/src/*"]
     }
   },
   "include": [

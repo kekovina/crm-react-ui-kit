@@ -2,14 +2,9 @@ import React, { useLayoutEffect } from 'react';
 import { DocsContainer } from '@storybook/blocks';
 import { I18nextProvider } from 'react-i18next';
 
-import {
-  getStorybookToolsContainer,
-  getTheme,
-  initialTheme,
-} from '@kommo-crm/storybook/utils';
-import { HIDDEN_SECTIONS } from '@kommo-crm/storybook/constants';
-
-import { i18n } from '@kommo-crm/storybook/i18n';
+import { getStorybookToolsContainer, getTheme, initialTheme } from '@sb/utils';
+import { HIDDEN_SECTIONS } from '@sb/constants';
+import { i18n } from '@sb/i18n';
 
 import { CustomDocsContainerProps } from './CustomDocsContainer.props';
 

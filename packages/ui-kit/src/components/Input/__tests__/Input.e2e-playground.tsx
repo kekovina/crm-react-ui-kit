@@ -4,7 +4,7 @@ import { AddonsMap } from '@kommo-crm/storybook/constants';
 import {
   ComponentPlayground,
   ComponentPlaygroundProps,
-} from 'src/tests/e2e/ComponentPlayground';
+} from '@/tests/e2e/ComponentPlayground';
 
 import { Input } from '../Input';
 import {

@@ -16,8 +16,8 @@ const config: Config.InitialOptions = {
     '<rootDir>/node_modules/(?!(@kommo-crm/storybook|nanoid)/)',
   ],
   moduleNameMapper: {
-    '^src/(.*)$': '<rootDir>/src/$1',
-    '^src$': '<rootDir>/src/index.ts',
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@$': '<rootDir>/src/index.ts',
   },
 };
 

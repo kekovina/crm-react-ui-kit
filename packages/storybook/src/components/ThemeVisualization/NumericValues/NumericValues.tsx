@@ -1,6 +1,6 @@
 import React, { type FC } from 'react';
 
-import { i18n } from '@kommo-crm/storybook/i18n';
+import { i18n } from '@sb/i18n';
 
 import { Props } from './NumericValues.props';
 

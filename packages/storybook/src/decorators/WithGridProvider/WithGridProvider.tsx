@@ -1,7 +1,7 @@
 import React from 'react';
 import { type Decorator } from '@storybook/react';
 
-import { GridProvider } from '../../components';
+import { GridProvider } from '@sb/components';
 
 /**
  * It is needed for binding the grid to Preview background into Docs.

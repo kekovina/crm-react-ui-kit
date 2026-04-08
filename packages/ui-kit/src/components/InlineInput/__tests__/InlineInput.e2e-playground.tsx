@@ -3,9 +3,9 @@ import React from 'react';
 import {
   ComponentPlayground,
   ComponentPlaygroundProps,
-} from 'src/tests/e2e/ComponentPlayground';
+} from '@/tests/e2e/ComponentPlayground';
 
-import { FOCUSABLE_ELEMENT_ID } from 'src/tests/e2e/constants';
+import { FOCUSABLE_ELEMENT_ID } from '@/tests/e2e/constants';
 
 import { InlineInput } from '../InlineInput';
 import {

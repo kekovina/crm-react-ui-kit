@@ -3,14 +3,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { CanvasCentered } from '@kommo-crm/storybook/constants';
 import { i18n } from '@kommo-crm/storybook/i18n';
 
-import { TextArea, TextareaLightTheme } from 'src/components/TextArea';
+import { TextArea, TextareaLightTheme } from '@/components/TextArea';
 
-import { Switcher, SwitcherPrimaryTheme } from 'src/components/Switcher';
+import { Switcher, SwitcherPrimaryTheme } from '@/components/Switcher';
 import {
   Text,
   TextPrimaryTheme,
   TextSecondaryLightTheme,
-} from 'src/components/Text';
+} from '@/components/Text';
 
 import { Label, LabelGroupTheme, LabelTheme } from '..';
 

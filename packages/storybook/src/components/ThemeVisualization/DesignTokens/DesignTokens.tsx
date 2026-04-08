@@ -1,7 +1,7 @@
 import React, { type FC } from 'react';
 import { ColorPalette, ColorItem } from '@storybook/blocks';
 
-import { i18n } from '@kommo-crm/storybook/i18n';
+import { i18n } from '@sb/i18n';
 
 import { type Props } from './DesignTokens.props';
 

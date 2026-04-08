@@ -8,14 +8,14 @@ import ContextMenuChevronRightIcon from '@kommo-crm/storybook/icons/chevronRight
 import {
   ComponentPlayground,
   ComponentPlaygroundProps,
-} from 'src/tests/e2e/ComponentPlayground';
+} from '@/tests/e2e/ComponentPlayground';
 
 import {
   Text,
   TextPrimaryTheme,
   TextSecondaryDarkTheme,
   TextTheme,
-} from 'src/components/Text';
+} from '@/components/Text';
 
 import { ContextMenuMode } from '../ContextMenu.enums';
 import { ContextMenu } from '..';

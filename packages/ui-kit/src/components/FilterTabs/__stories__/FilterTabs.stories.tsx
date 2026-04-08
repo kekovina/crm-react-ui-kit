@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { i18n } from '@kommo-crm/storybook/i18n';
 import { CanvasCentered } from '@kommo-crm/storybook/constants';
 
-import { Text, TextPrimaryTheme } from 'src/components/Text';
+import { Text, TextPrimaryTheme } from '@/components/Text';
 
 import {
   TabPrimaryTheme,

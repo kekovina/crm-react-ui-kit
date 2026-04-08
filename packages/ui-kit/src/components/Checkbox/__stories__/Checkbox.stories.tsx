@@ -8,7 +8,7 @@ import { LabelWrapper } from '@kommo-crm/storybook/components';
 
 import { i18n } from '@kommo-crm/storybook/i18n';
 
-import { Text, TextPrimaryTheme } from 'src/components/Text';
+import { Text, TextPrimaryTheme } from '@/components/Text';
 
 import {
   Checkbox,

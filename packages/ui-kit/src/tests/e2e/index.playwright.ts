@@ -1,8 +1,8 @@
 import { test as testBase, expect } from '@playwright/experimental-ct-react';
 
-import { Appearance } from 'src/lib/appearance';
+import { Appearance } from '@/lib/appearance';
 
-import { Platform } from 'src/lib/platform';
+import { Platform } from '@/lib/platform';
 
 import { type TestOptions } from './types';
 

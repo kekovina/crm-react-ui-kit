@@ -7,12 +7,11 @@ import {
 } from '@storybook/components';
 
 import { i18n } from '../../i18n';
-
 import {
   getLocale,
   INITIAL_LANGUAGE,
   LOCALE_LIST,
-  Langs,
+  type Langs,
 } from '../../../src/utils';
 export const LangSelect = () => {
   const [locale, setLocale] = useState(INITIAL_LANGUAGE);

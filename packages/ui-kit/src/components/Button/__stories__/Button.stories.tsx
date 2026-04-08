@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { CanvasCentered, IconsMap } from '@kommo-crm/storybook/constants';
 import { i18n } from '@kommo-crm/storybook/i18n';
 
-import { noop } from 'src/utils';
+import { noop } from '@/utils';
 
 import {
   Button,

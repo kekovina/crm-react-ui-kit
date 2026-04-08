@@ -3,11 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { CanvasCentered } from '@kommo-crm/storybook/constants';
 
-import { Text, TextPrimaryTheme } from 'src/components/Text';
+import { Text, TextPrimaryTheme } from '@/components/Text';
 
-import SpinnerIcon from '/src/icons/spinner.svg';
-import SettingsIcon from '/src/icons/settings.svg';
-import CalendarIcon from '/src/icons/calendar.svg';
+import SpinnerIcon from '@/icons/spinner.svg';
+import SettingsIcon from '@/icons/settings.svg';
+import CalendarIcon from '@/icons/calendar.svg';
 
 import {
   Accordion,

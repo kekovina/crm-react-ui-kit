@@ -4,10 +4,10 @@ import { Meta, StoryObj } from '@storybook/react';
 import { i18n } from '@kommo-crm/storybook/i18n';
 import { CanvasCentered } from '@kommo-crm/storybook/constants';
 
-import { LabelTheme } from 'src/components/Label';
-import { Text, TextPrimaryTheme } from 'src/components/Text';
+import { LabelTheme } from '@/components/Label';
+import { Text, TextPrimaryTheme } from '@/components/Text';
 
-import { CheckboxLightTheme } from 'src/components/Checkbox/Checkbox.themes';
+import { CheckboxLightTheme } from '@/components/Checkbox/Checkbox.themes';
 
 import {
   CheckboxGroup,

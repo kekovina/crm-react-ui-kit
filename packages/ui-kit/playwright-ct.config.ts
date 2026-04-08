@@ -5,8 +5,8 @@ import svgrPlugin from 'vite-plugin-svgr';
 import { defineConfig, devices } from '@playwright/experimental-ct-react';
 import { type ReporterDescription } from '@playwright/test';
 
-import { Platform } from './src/lib/platform';
-import { Appearance } from './src/lib/appearance';
+import { Platform } from '@/lib/platform';
+import { Appearance } from '@/lib/appearance';
 
 const DEFAULT_REPORTER: ReporterDescription[] = [
   ['list'],
@@ -119,7 +119,7 @@ export default defineConfig({
       plugins: [svgrPlugin({ include: '**/*.svg' })],
       resolve: {
         alias: {
-          src: path.resolve(__dirname, './src'),
+          '@': path.resolve(__dirname, './src'),
         },
       },
     },

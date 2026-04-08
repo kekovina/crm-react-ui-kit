@@ -11,7 +11,7 @@ import {
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
-import { Text, TextTheme, TextPrimaryTheme } from 'src/components/Text';
+import { Text, TextTheme, TextPrimaryTheme } from '@/components/Text';
 
 import { ContextMenuMode } from '../ContextMenu.enums';
 import { ContextMenu, ContextMenuRootProps } from '..';

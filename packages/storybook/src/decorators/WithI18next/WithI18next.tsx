@@ -2,7 +2,7 @@ import { I18nextProvider } from 'react-i18next';
 import React from 'react';
 import { type Decorator } from '@storybook/react';
 
-import { i18n } from '@kommo-crm/storybook/i18n';
+import { i18n } from '@sb/i18n';
 
 export const WithI18next: Decorator = (Story) => {
   return (
