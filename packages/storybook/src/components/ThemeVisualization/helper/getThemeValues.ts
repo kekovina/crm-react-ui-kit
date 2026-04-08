@@ -2,7 +2,10 @@ import { Declaration, type Rule } from 'css';
 
 import { type CrmUiKitCSSProperties } from '@ui-kit/lib/theme';
 
-import { type ColorItemType, type NumericItemType } from '../types/Items';
+import {
+  type ColorItemType,
+  type NumericItemType,
+} from '@sb/components/ThemeVisualization/types/Items';
 
 const isCssVariable = (str: string) => str.startsWith('var');
 

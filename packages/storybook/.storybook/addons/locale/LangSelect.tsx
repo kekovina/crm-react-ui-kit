@@ -6,13 +6,13 @@ import {
   TooltipLinkList,
 } from '@storybook/components';
 
-import { i18n } from '../../i18n';
+import { i18n } from '@sb/i18n';
 import {
   getLocale,
   INITIAL_LANGUAGE,
   LOCALE_LIST,
   type Langs,
-} from '../../../src/utils';
+} from '@sb/utils';
 export const LangSelect = () => {
   const [locale, setLocale] = useState(INITIAL_LANGUAGE);
 

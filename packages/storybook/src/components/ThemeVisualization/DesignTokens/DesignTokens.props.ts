@@ -1,4 +1,4 @@
-import { type ColorItemType } from '../types/Items';
+import { type ColorItemType } from '@sb/components/ThemeVisualization/types/Items';
 
 export type Props = {
   /**

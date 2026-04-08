@@ -2,12 +2,11 @@ import React, { type FC, useMemo } from 'react';
 import { type Rule } from 'css';
 import { Canvas } from '@storybook/blocks';
 
-import { DesignTokens } from './DesignTokens/DesignTokens';
-import { NumericValues } from './NumericValues/NumericValues';
-
-import { ThemeVisualizationProps } from './ThemeVisualization.props';
-import { getParsedCss } from './helper/getParsedCss';
-import { getThemeValues } from './helper/getThemeValues';
+import { DesignTokens } from '@sb/components/ThemeVisualization/DesignTokens/DesignTokens';
+import { NumericValues } from '@sb/components/ThemeVisualization/NumericValues/NumericValues';
+import { ThemeVisualizationProps } from '@sb/components/ThemeVisualization/ThemeVisualization.props';
+import { getParsedCss } from '@sb/components/ThemeVisualization/helper/getParsedCss';
+import { getThemeValues } from '@sb/components/ThemeVisualization/helper/getThemeValues';
 
 export const ThemeVisualization: FC<ThemeVisualizationProps> = ({
   theme,

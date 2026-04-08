@@ -1,4 +1,4 @@
-import { type NumericItemType } from '../types/Items';
+import { type NumericItemType } from '@sb/components/ThemeVisualization/types/Items';
 
 export type Props = {
   /**

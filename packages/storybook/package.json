@@ -10,6 +10,7 @@
     "./components": "./src/components/index.ts",
     "./constants": "./src/constants/index.ts",
     "./decorators": "./src/decorators/index.ts",
+    "./locales": "./src/locales/index.ts",
     "./utils": "./src/utils/index.ts",
     "./i18n": "./src/i18n.ts",
     "./icons/*": "./src/icons/*",

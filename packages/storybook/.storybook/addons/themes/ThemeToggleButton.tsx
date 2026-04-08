@@ -3,8 +3,8 @@ import { addons } from '@storybook/manager-api';
 import { IconButton } from '@storybook/components';
 import { SunIcon, MoonIcon } from '@storybook/icons';
 
-import { Appearance } from '../../../../ui-kit/src/lib/appearance';
-import { getTheme, initialTheme } from '../../../src/utils';
+import { Appearance } from '@sb/appearance';
+import { getTheme, initialTheme } from '@sb/utils';
 
 export const ThemeToggleButton = () => {
   const [appearance, setAppearance] = useState<Appearance>(initialTheme);
