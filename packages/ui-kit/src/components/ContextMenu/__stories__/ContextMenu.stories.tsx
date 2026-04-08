@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import ContextMenuTriggerIcon from '@storybook-utils/icons/trigger.svg';
-import ContextMenuTrashcanIcon from '@storybook-utils/icons/trashcan.svg';
-import ContextMenuCheckIcon from '@storybook-utils/icons/check.svg';
-import ContextMenuChevronRightIcon from '@storybook-utils/icons/chevronRight.svg';
+import { CanvasCentered } from '@kommo-crm/storybook/constants';
+import { i18n } from '@kommo-crm/storybook/i18n';
+
+import ContextMenuTriggerIcon from '@kommo-crm/storybook/icons/trigger.svg';
+import ContextMenuTrashcanIcon from '@kommo-crm/storybook/icons/trashcan.svg';
+import ContextMenuCheckIcon from '@kommo-crm/storybook/icons/check.svg';
+import ContextMenuChevronRightIcon from '@kommo-crm/storybook/icons/chevronRight.svg';
 
 import { ContextMenu } from 'src/components/ContextMenu';
 import {
@@ -14,10 +17,6 @@ import {
   TextSecondaryDarkTheme,
   type TextTheme,
 } from 'src/components/Text';
-
-import { CanvasCentered } from '@storybook-utils/constants';
-
-import { i18n } from '@i18n';
 
 import { Button, ButtonNeutralTheme } from 'src/components/Button';
 
@@ -45,7 +44,7 @@ import {
 import ContextMenuTriggerIcon from 'public/icons/trigger.svg';
 import ContextMenuTrashcanIcon from 'public/icons/trashcan.svg';
 import ContextMenuCheckIcon from 'public/icons/check.svg';
-import ContextMenuChevronRightIcon from '@storybook-utils/icons/chevronRight.svg';
+import ContextMenuChevronRightIcon from '@kommo-crm/storybook/icons/chevronRight.svg';
 
 import s from './ContextMenu.module.css';
 

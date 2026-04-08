@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
+import { i18n } from '@kommo-crm/storybook/i18n';
+import { CanvasCentered } from '@kommo-crm/storybook/constants';
+
 import { action } from '@storybook/addon-actions';
 import { useArgs } from 'storybook/internal/preview-api';
 
-import { CanvasCentered } from '@storybook-utils/constants';
 import { Text, TextPrimaryTheme } from 'src/components/Text';
 import {
   SelectButtonDarkTheme,
@@ -14,8 +16,6 @@ import {
 import SettingsIcon from 'src/icons/settings.svg';
 import CopyIcon from 'src/icons/copy.svg';
 import DeleteIcon from 'src/icons/delete.svg';
-
-import { i18n } from '@i18n';
 
 import { Select } from '../Select';
 import { SelectItem } from '../Select.types';

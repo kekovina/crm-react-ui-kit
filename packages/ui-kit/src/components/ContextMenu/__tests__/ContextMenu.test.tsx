@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ContextMenuCheckIcon from '@kommo-crm/storybook/icons/check.svg';
+import ContextMenuTriggerIcon from '@kommo-crm/storybook/icons/trigger.svg';
 import {
   render,
   screen,
@@ -10,9 +12,6 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
 import { Text, TextTheme, TextPrimaryTheme } from 'src/components/Text';
-
-import ContextMenuCheckIcon from '@storybook-utils/icons/check.svg';
-import ContextMenuTriggerIcon from '@storybook-utils/icons/trigger.svg';
 
 import { ContextMenuMode } from '../ContextMenu.enums';
 import { ContextMenu, ContextMenuRootProps } from '..';

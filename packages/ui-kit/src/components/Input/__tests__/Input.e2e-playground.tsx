@@ -1,11 +1,10 @@
 import React from 'react';
+import { AddonsMap } from '@kommo-crm/storybook/constants';
 
 import {
   ComponentPlayground,
   ComponentPlaygroundProps,
 } from 'src/tests/e2e/ComponentPlayground';
-
-import { AddonsMap } from '@storybook-utils/constants';
 
 import { Input } from '../Input';
 import {

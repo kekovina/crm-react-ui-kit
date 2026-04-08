@@ -1,11 +1,9 @@
 import React, { useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { CanvasCentered, IconsMap } from '@storybook-utils/constants';
+import { CanvasCentered, IconsMap } from '@kommo-crm/storybook/constants';
+import { i18n } from '@kommo-crm/storybook/i18n';
 
 import { noop } from 'src/utils';
-
-import { i18n } from '@i18n';
 
 import {
   Button,

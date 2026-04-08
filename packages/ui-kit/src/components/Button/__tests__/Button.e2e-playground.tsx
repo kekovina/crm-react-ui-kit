@@ -1,11 +1,10 @@
 import React from 'react';
+import { IconsMap } from '@kommo-crm/storybook/constants';
 
 import {
   ComponentPlayground,
   ComponentPlaygroundProps,
 } from 'src/tests/e2e/ComponentPlayground';
-
-import { IconsMap } from '@storybook-utils/constants';
 
 import {
   Button,

@@ -20,9 +20,7 @@
     "moduleResolution": "bundler",
     "paths": {
       "src/*": ["./src/*"],
-      "@storybook-utils/*": ["./storybook/*"],
-      "@crm-react-ui-kit-e2e/test": ["./src/tests/e2e/index.playwright"],
-      "@i18n": [".storybook/i18n.ts"]
+      "@crm-react-ui-kit-e2e/test": ["./src/tests/e2e/index.playwright"]
     }
   },
   "include": ["./**/*.tsx", "./**/*.ts", "./.storybook/**/*"],
