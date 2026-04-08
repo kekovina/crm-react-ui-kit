@@ -1,1 +1,1 @@
-export { Appearance } from '@ui-kit/lib/appearance';
+export { Appearance } from '../../ui-kit/src/lib/appearance';

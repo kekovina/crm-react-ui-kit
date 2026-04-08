@@ -1,1 +1,1 @@
-export { i18n } from '@sb/i18n';
+export { i18n } from '@kommo-crm/storybook/i18n';

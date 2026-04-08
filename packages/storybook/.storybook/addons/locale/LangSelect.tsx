@@ -6,13 +6,13 @@ import {
   TooltipLinkList,
 } from '@storybook/components';
 
-import { i18n } from '@sb/i18n';
+import { i18n } from '@kommo-crm/storybook/i18n';
 import {
   getLocale,
   INITIAL_LANGUAGE,
   LOCALE_LIST,
   type Langs,
-} from '@sb/utils';
+} from '@kommo-crm/storybook/utils';
 export const LangSelect = () => {
   const [locale, setLocale] = useState(INITIAL_LANGUAGE);
 

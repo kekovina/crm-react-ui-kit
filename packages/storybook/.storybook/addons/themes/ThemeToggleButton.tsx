@@ -3,8 +3,8 @@ import { addons } from '@storybook/manager-api';
 import { IconButton } from '@storybook/components';
 import { SunIcon, MoonIcon } from '@storybook/icons';
 
-import { Appearance } from '@sb/appearance';
-import { getTheme, initialTheme } from '@sb/utils';
+import { Appearance } from '@kommo-crm/storybook/appearance';
+import { getTheme, initialTheme } from '@kommo-crm/storybook/utils';
 
 export const ThemeToggleButton = () => {
   const [appearance, setAppearance] = useState<Appearance>(initialTheme);
