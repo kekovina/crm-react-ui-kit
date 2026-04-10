@@ -90,15 +90,53 @@ const azure900 = color.light.azure[900]; // '#0b2934'
 
 <ReactMarkdown>
   {i18n.t(
-    'Themes map semantic and component-level names to primitive values. Available themes: `light`, `dark`.'
+    'Themes map semantic and component-level names to primitive values. Currently only the `light` theme is available.'
   )}
 </ReactMarkdown>
+
+<table>
+  <thead>
+    <tr>
+      <th>{i18n.t('Name')}</th>
+      <th>{i18n.t('Description')}</th>
+      <th>{i18n.t('Selector')}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>light</code>
+      </td>
+      <td>{i18n.t('Default light theme, always active')}</td>
+      <td>
+        <code>:root</code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ReactMarkdown>
+  {i18n.t(
+    'Each theme defines a CSS scope where its tokens are applied. The `light` theme targets `:root` globally. Future themes may use an attribute selector to allow switching at runtime:'
+  )}
+</ReactMarkdown>
+
+```css
+/* light — always active, targets :root */
+:root {
+  --text-primary: var(--color-light-azure-900);
+}
+
+/* dark — active only when data-theme="dark" is set on <html> */
+:root[data-theme='dark'] {
+  --text-primary: var(--color-dark-azure-50);
+}
+```
 
 <ReactMarkdown>{`### CSS`}</ReactMarkdown>
 
 ```css
 @import '@kommo-crm/tokens/light/css';
-/* dark: @import '@kommo-crm/tokens/dark/css'; */
 /* minified: @import '@kommo-crm/tokens/light/min.css'; */
 ```
 

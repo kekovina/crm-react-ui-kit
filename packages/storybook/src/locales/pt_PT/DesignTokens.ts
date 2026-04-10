@@ -10,8 +10,13 @@ export default {
     'Os primitivos contêm a paleta de cores base compartilhada entre todos os temas.',
   'After importing, CSS custom properties are available on `:root`:':
     'Após a importação, as propriedades customizadas CSS ficam disponíveis em `:root`:',
-  'Themes map semantic and component-level names to primitive values. Available themes: `light`, `dark`.':
-    'Os temas mapeiam nomes semânticos e de componentes para valores primitivos. Temas disponíveis: `light`, `dark`.',
+  'Themes map semantic and component-level names to primitive values. Currently only the `light` theme is available.':
+    'Os temas mapeiam nomes semânticos e de componentes para valores primitivos. Atualmente apenas o tema `light` está disponível.',
+  'Each theme defines a CSS scope where its tokens are applied. The `light` theme targets `:root` globally. Future themes may use an attribute selector to allow switching at runtime:':
+    'Cada tema define um escopo CSS onde seus tokens são aplicados. O tema `light` é aplicado globalmente em `:root`. Temas futuros poderão usar um seletor de atributo para permitir a troca em tempo de execução:',
+  'Description': 'Descrição',
+  'Selector': 'Seletor',
+  'Default light theme, always active': 'Tema claro padrão, sempre ativo',
   'Theme tokens are exposed as CSS custom properties on `:root`:':
     'Os tokens de tema são expostos como propriedades customizadas CSS em `:root`:',
 };

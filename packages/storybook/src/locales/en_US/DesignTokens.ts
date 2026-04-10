@@ -10,8 +10,13 @@ export default {
     'Primitives contain the raw color palette shared across all themes.',
   'After importing, CSS custom properties are available on `:root`:':
     'After importing, CSS custom properties are available on `:root`:',
-  'Themes map semantic and component-level names to primitive values. Available themes: `light`, `dark`.':
-    'Themes map semantic and component-level names to primitive values. Available themes: `light`, `dark`.',
+  'Themes map semantic and component-level names to primitive values. Currently only the `light` theme is available.':
+    'Themes map semantic and component-level names to primitive values. Currently only the `light` theme is available.',
+  'Each theme defines a CSS scope where its tokens are applied. The `light` theme targets `:root` globally. Future themes may use an attribute selector to allow switching at runtime:':
+    'Each theme defines a CSS scope where its tokens are applied. The `light` theme targets `:root` globally. Future themes may use an attribute selector to allow switching at runtime:',
+  'Description': 'Description',
+  'Selector': 'Selector',
+  'Default light theme, always active': 'Default light theme, always active',
   'Theme tokens are exposed as CSS custom properties on `:root`:':
     'Theme tokens are exposed as CSS custom properties on `:root`:',
 };
