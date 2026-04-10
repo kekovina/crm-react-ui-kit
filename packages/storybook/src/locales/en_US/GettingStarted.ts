@@ -9,4 +9,7 @@ export default {
     'We also support a [**Legacy Storybook**](https://developers.kommo.com/docs/native-control) with a smaller set of components used in the old stack.',
   'Install the package using one of the following methods':
     'Install the package using one of the following methods',
+  'Standalone usage(out of Kommo CRM)': 'Standalone usage (out of Kommo CRM)',
+  'Do not forget import ui-kit styles in root of your stylesheets for use default themes':
+    'Do not forget import ui-kit styles in root of your stylesheets for use default themes',
 };
