@@ -1,5 +1,4 @@
 export default {
-  'Design Tokens': 'Design Tokens',
   'You can use our design tokens and themes from `@kommo-crm/tokens` package':
     'You can use our design tokens and themes from `@kommo-crm/tokens` package',
   'The package provides two tiers of tokens: **Primitives** (raw color palette) and **Themes** (semantic & component-level tokens mapped to primitives).':

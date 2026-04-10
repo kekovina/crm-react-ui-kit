@@ -1,5 +1,6 @@
 export default {
   'Getting Started': 'Arrancada',
+  'Design Tokens': 'Tokens de diseño',
   'Native Kommo controls': 'Controles nativos de Kommo',
   'This is a sandbox with descriptions of **components** that can be used in widgets within the system.':
     'Este es un sandbox con descripciones de los componentes que se pueden utilizar en widgets dentro del sistema.',
