@@ -14,7 +14,6 @@
 | ------------------------------ | ---------------------------- | --------------------------- |
 | `@kommo-crm/tokens/primitives` | JS/TS, CSS, SCSS, LESS, JSON | Base primitive token values |
 | `@kommo-crm/tokens/light`      | JS/TS, CSS, SCSS, LESS, JSON | Light theme semantic tokens |
-| `@kommo-crm/tokens/dark`       | JS/TS, CSS, SCSS, LESS, JSON | Dark theme semantic tokens  |
 
 ### Format suffixes
 
