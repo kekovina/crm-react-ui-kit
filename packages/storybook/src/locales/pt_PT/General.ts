@@ -38,6 +38,10 @@ export default {
   'Parameters': 'Parâmetros',
   'Component logic': 'Lógica do componente',
   'Page markup': 'Marcação da página',
+  'Click any color swatch to copy its token name.':
+    'Clique em qualquer amostra de cor para copiar o nome do token.',
+  'Copied token name.': 'Nome do token copiado.',
+  'Failed to copy token name.': 'Não foi possível copiar o nome do token.',
 
   /* Components */
 
