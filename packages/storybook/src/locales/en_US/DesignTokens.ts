@@ -16,6 +16,7 @@ export default {
   'Description': 'Description',
   'Selector': 'Selector',
   'Default light theme, always active': 'Default light theme, always active',
+  'Dark theme': 'Dark theme',
   'Theme tokens are exposed as CSS custom properties on `:root`:':
     'Theme tokens are exposed as CSS custom properties on `:root`:',
 };
