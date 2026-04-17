@@ -1,0 +1,15 @@
+import { defineUiKitSemanticTokens, defineUiKitTheme } from '@/define';
+
+const semanticTokens = defineUiKitSemanticTokens({
+  palette: {
+    background: {
+      default: 'color.dark.azure.100',
+    },
+  },
+});
+
+export default defineUiKitTheme({
+  id: 'light-ui-kit',
+  prefix: 'crm-ui-kit',
+  semanticTokens,
+});

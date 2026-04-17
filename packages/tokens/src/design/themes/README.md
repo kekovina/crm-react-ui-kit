@@ -1,169 +1,186 @@
 # Themes
 
-Each theme is a folder inside `themes/` containing three files.
+Each theme is a folder inside `themes/` containing two files.
 
 ## Folder structure
 
 ```
 themes/
-├── index.ts          # Theme registry
-├── light/
-│   ├── index.ts      # ThemeConfig
-│   ├── semantic.ts   # Semantic tokens
-│   └── component.ts  # Component tokens
-└── dark/
-    ├── index.ts
-    ├── semantic.ts
-    └── component.ts
+├── index.ts                    # Theme registry
+├── lightUiKit/
+│   └── index.ts                # Theme config + semantic tokens
+└── alternativeUiKit/
+    └── index.ts                # Theme config + semantic tokens
 ```
+
+---
 
 ## Theme files
 
 ### `index.ts` — theme config
 
 ```ts
-import semanticTokens from './semantic';
-import componentTokens from './component';
-import { ThemeConfig } from '@/types/common';
+import { defineUiKitSemanticTokens, defineUiKitTheme } from '@/define';
 
-const myTheme: ThemeConfig = {
-  id: 'my-theme', // unique identifier
+const semanticTokens = defineUiKitSemanticTokens({
+  palette: {
+    border: {
+      error: 'color.dark.red.400',
+    },
+  },
+});
+
+export default defineUiKitTheme({
+  id: 'my-theme',
+  prefix: 'crm-ui-kit',
+  conditions: [":root[data-crm-ui-kit-theme='my-theme']"],
   semanticTokens,
-  componentTokens,
-  conditions: [
-    // CSS selectors that activate this theme
-    ":root[data-crm-ui-kit-theme='my-theme']",
-  ],
-};
-
-export default myTheme;
+});
 ```
 
-> `conditions` are not needed for the default theme (light). A theme without `conditions` is applied globally.
+> `conditions` omitted for default theme — applied globally.
+>
+> `isUiKitTheme` injected by `defineUiKitTheme` — do not set manually.
 
 ---
-
-### `semantic.ts` — semantic tokens
-
-Shared color palette tokens: backgrounds, text, borders, etc.
-
-```ts
-import { SemanticTokens } from '@/types/semantic';
-
-const semanticTokens: SemanticTokens = {
-  palette: {
-    background: {
-      default: 'color.light.neutral.100',
-    },
-    foreground: {
-      primary: 'color.light.neutral.800',
-    },
-  },
-};
-
-type SemanticTokens = typeof semanticTokens;
-export type Semantic_ThemeName_Path = ObjectLeaves<SemanticTokens>;
-
-export default semanticTokens;
-```
-
----
-
-### `component.ts` — component tokens
-
-Tokens specific to individual components.
-
-```ts
-import { ComponentTokens } from '@/types/component';
-
-const componentTokens: ComponentTokens = {
-  palette: {
-    button: {
-      classic: {
-        background: 'palette.background.default',
-      },
-    },
-  },
-};
-
-export default componentTokens;
-```
 
 ## Token values
 
-A token can be:
+Semantic token value is a **primitive path** — `'color.light.neutral.100'` (reference to color from `primitives`).
 
-- **a primitive path** — `'color.light.neutral.100'` (reference to a color from `primitives`)
-- **a raw CSS value** — `'rgba(234, 234, 234, 0.9)'` (used as-is)
+Valid keys and values enforced by TypeScript — IDE provides autocomplete and reports unknown keys.
 
 ---
 
 ## Registering a new theme
 
-### Step 1 — create `themes/dark/semantic.ts`
+### Step 1 — create `themes/myTheme/index.ts`
 
 ```ts
-import { SemanticTokens } from '@/types/semantic';
+import { defineUiKitSemanticTokens, defineUiKitTheme } from '@/define';
 
-export const semanticTokens: SemanticTokens = {
-  text: {
-    primary: 'color.dark.azure.100',
+const semanticTokens = defineUiKitSemanticTokens({
+  palette: {
+    background: {
+      default: 'color.dark.neutral.900',
+    },
   },
-};
-```
+});
 
----
-
-### Step 2 — create `themes/dark/component.ts`
-
-```ts
-import { ComponentTokens } from '@/types/component';
-
-export const componentTokens: ComponentTokens = {
-  button: {
-    text: 'color.dark.azure.900',
-    border: 'text.primary',
-  },
-};
-```
-
----
-
-### Step 3 — create `themes/dark/index.ts`
-
-Non-default themes must include `conditions` — CSS selectors that activate the theme:
-
-```ts
-import { ThemeConfig } from '@/types/common';
-import { semanticTokens } from './semantic';
-import { componentTokens } from './component';
-
-const darkTheme: ThemeConfig = {
-  id: 'dark',
+export default defineUiKitTheme({
+  id: 'my-theme',
+  prefix: 'crm-ui-kit',
+  conditions: [":root[data-crm-ui-kit-theme='my-theme']"],
   semanticTokens,
-  componentTokens,
-  conditions: [":root[data-crm-ui-kit-theme='dark']"],
-};
-
-export default darkTheme;
+});
 ```
 
-> The default theme (light) has no `conditions` and is applied globally. Every other theme must specify at least one selector.
-
----
-
-### Step 4 — update `themes/index.ts`
-
-Add the import and register the theme in the array:
+### Step 2 — register in `themes/index.ts`
 
 ```ts
 import { ThemeConfig } from '@/types/common';
-import light from './light';
-import dark from './dark';
+import lightUiKit from './lightUiKit';
+import myTheme from './myTheme';
 
-const themes: ThemeConfig[] = [light, dark];
+const themes: ThemeConfig[] = [lightUiKit, myTheme];
 
 export default themes;
 ```
 
-`SemanticTokenPath` is derived automatically from `SemanticTokens` in `@/types/semantic` — no type changes needed when adding a theme.
+---
+
+## Adding a new semantic token (ui-kit + tokens package)
+
+New token lives in two places: CSS variable in `ui-kit`, CSS variable name in `tokens`.
+
+### Step 1 — add CSS variable to `ui-kit`
+
+Open `packages/ui-kit/src/stylesheets/theme.css` and add the variable to `:root`:
+
+```css
+:root {
+  /* existing tokens... */
+  --crm-ui-kit-palette-border-focus: #4c8bf7;
+}
+```
+
+For dark theme override, also add to the `[data-crm-ui-kit-theme='alternative']` block if needed:
+
+```css
+:root[data-crm-ui-kit-theme='alternative'] {
+  --crm-ui-kit-palette-border-focus: #1691ff;
+}
+```
+
+### Step 2 — add CSS variable name to `Tokens`
+
+Open `packages/tokens/src/types/ui-kit-tokens.ts` and add to the `Tokens` union:
+
+```ts
+export type Tokens =
+  | ...existing tokens...
+  | '--crm-ui-kit-palette-border-focus';  // <-- new
+```
+
+`SemanticUiKitTokensShape` in `src/types/semantic.ts` re-derives automatically — no manual shape edits needed.
+
+> **If the variable name contains a multi-word segment that must not be split** (e.g. `focus-ring`), also add it to `AtomicSegments` in the same file:
+>
+> ```ts
+> export type AtomicSegments =
+>   | ...existing atoms...
+>   | 'focus-ring';  // <-- prevents split into focus + ring
+> ```
+>
+> Rule: add to `AtomicSegments` when the segment is a single semantic unit and splitting it would create a nonsensical key hierarchy.
+
+### Step 3 — set value in theme configs (if needed)
+
+If the token needs a non-default value in a specific theme, add it to that theme's `index.ts`:
+
+```ts
+// themes/alternativeUiKit/index.ts
+const semanticTokens = defineUiKitSemanticTokens({
+  palette: {
+    border: {
+      focus: 'color.dark.azure.400',
+    },
+  },
+});
+```
+
+Only add where the value differs from the CSS default. No requirement to set in every theme.
+
+---
+
+## Removing a token
+
+Two-stage process across major versions.
+
+### Stage 1 — deprecate (before next major)
+
+Mark the CSS variable with a comment in `theme.css`:
+
+```css
+:root {
+  /** @deprecated Use --crm-ui-kit-palette-border-default instead. Removed in next major. */
+  --crm-ui-kit-palette-border-focus: #4c8bf7;
+}
+```
+
+Mark in `Tokens` union in `ui-kit-tokens.ts`:
+
+```ts
+export type Tokens =
+  | ...
+  /** @deprecated Use '--crm-ui-kit-palette-border-default' instead. */
+  | '--crm-ui-kit-palette-border-focus';
+```
+
+### Stage 2 — remove (next major)
+
+1. Delete CSS variable from `theme.css`
+2. Remove from `Tokens` union in `ui-kit-tokens.ts`
+3. Remove from `AtomicSegments` if applicable
+
+Any theme config still referencing the removed token produces TypeScript error, guiding cleanup.
