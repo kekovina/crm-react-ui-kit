@@ -7,4 +7,5 @@ export type TokensToObject<
   T extends string,
   V = TokenComponentValue,
   Atoms extends string = never,
-> = UnionToIntersection<TokenToObject<T, V, Atoms>>;
+  Prefix extends string = never,
+> = UnionToIntersection<TokenToObject<T, V, Atoms, Prefix>>;

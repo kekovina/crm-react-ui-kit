@@ -8,4 +8,5 @@ export type TokenToObject<
   T extends string,
   V = TokenComponentValue,
   Atoms extends string = never,
-> = TupleToNestedObject<Split<StripPrefix<T>, Atoms>, V>;
+  Prefix extends string = never,
+> = TupleToNestedObject<Split<StripPrefix<T, Prefix>, Atoms>, V>;

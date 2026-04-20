@@ -17,7 +17,8 @@ export type SemanticTokensType = TokensToObject<
 type SemanticUiKitTokensShape = TokensToObject<
   Tokens,
   TokenSemanticValue,
-  AtomicSegments
+  AtomicSegments,
+  '--crm-ui-kit'
 >;
 
 export type SemanticUiKitTokens = DeepPartial<SemanticUiKitTokensShape>;
