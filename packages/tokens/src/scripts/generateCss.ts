@@ -1,6 +1,6 @@
-import getPrimitiveVarName from '@/libs/getPrimitiveVarName';
+import { getPrimitiveVarName } from '@/libs/getPrimitiveVarName';
 import { isRawColorValue } from '@/libs/isRawColorValue';
-import minify from '@/libs/minify';
+import { minify } from '@/libs/minify';
 
 import type {
   PrimitiveCollection,

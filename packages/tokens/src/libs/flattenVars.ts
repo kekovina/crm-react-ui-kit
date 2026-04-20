@@ -5,7 +5,7 @@ type NestedTokenObj = { [key: string]: string | NestedTokenObj };
  * Keys are joined with `-`.
  * @example { color: { light: { azure: { 50: '#fff' } } } } → { 'color-light-azure-50': '#fff' }
  */
-export default function flattenVars(
+export function flattenVars(
   obj: NestedTokenObj,
   prefix = ''
 ): Record<string, string> {

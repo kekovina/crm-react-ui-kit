@@ -1,5 +1,5 @@
-import primitives from '@/design/primitives';
-import themes from '@/design/themes';
+import { primitives } from '@/design/primitives';
+import { themes } from '@/design/themes';
 import { isRawColorValue } from '@/libs/isRawColorValue';
 
 type DTCGToken = { $type: string; $value: string };

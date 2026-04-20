@@ -1,6 +1,6 @@
-import primitives from '@/design/primitives';
-import themes from '@/design/themes';
-import flattenVars from '@/libs/flattenVars';
+import { primitives } from '@/design/primitives';
+import { themes } from '@/design/themes';
+import { flattenVars } from '@/libs/flattenVars';
 
 export type VarGroup = {
   name: string;

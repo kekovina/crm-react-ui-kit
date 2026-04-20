@@ -1,4 +1,4 @@
-import getPrimitiveVarName from '@/libs/getPrimitiveVarName';
+import { getPrimitiveVarName } from '@/libs/getPrimitiveVarName';
 import { isRawColorValue } from '@/libs/isRawColorValue';
 
 import type {

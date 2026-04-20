@@ -1,5 +1,5 @@
-import primitives from '@/design/primitives';
-import themes from '@/design/themes';
+import { primitives } from '@/design/primitives';
+import { themes } from '@/design/themes';
 import { resolveTokens } from '@/libs/resolveTokens';
 
 const HEADER = '// Auto-generated. Do not edit manually.\n';
