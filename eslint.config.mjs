@@ -393,13 +393,6 @@ export default tseslint.config(
     },
   },
 
-  // {
-  //   files: ['packages/tokens/src/scripts/**/*.ts'],
-  //   rules: {
-  //     'max-depth': ['error', { max: 10 }],
-  //   },
-  // },
-
   {
     files: ['packages/tokens/src/index.ts'],
     rules: {
