@@ -37,7 +37,7 @@ export default tseslint.config(
       'packages/ui-kit/playwright/.cache',
       'packages/ui-kit/coverage',
       'packages/ui-kit/dist',
-
+      'packages/tokens/.generated',
       'packages/tokens/dist',
     ],
   },
