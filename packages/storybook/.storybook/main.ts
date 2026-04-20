@@ -105,6 +105,9 @@ const config: StorybookConfig = {
           { find: /^@ui-kit\/public\//, replacement: `${uiKitPublic}/` },
           { find: /^@ui-kit\//, replacement: `${uiKitSrc}/` },
           { find: /^@sb\//, replacement: `${storybookSrc}/` },
+          { find: /^@storybook-utils\//, replacement: `${storybookSrc}/` },
+          { find: '@i18n', replacement: `${storybookSrc}/i18n.ts` },
+          { find: /^src\//, replacement: `${uiKitSrc}/` },
         ],
       },
     });
