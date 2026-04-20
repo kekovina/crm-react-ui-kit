@@ -23,6 +23,7 @@ function renderGroups(
       const lines = Object.entries(vars)
         .map(([k, v]) => `  --${k}: ${transform(v)};`)
         .join('\n');
+
       return `  /* ${name} */\n${lines}`;
     })
     .join('\n\n');
@@ -39,6 +40,7 @@ export function generateThemesCss(
     collections.map(({ themeId, selector, semantic }) => {
       const semanticSection = `  /* ── Semantic ── */\n\n${renderGroups(semantic.groups, toVarRef)}`;
       const body = `${semanticSection}\n`;
+
       return [themeId, `${selector} {\n${body}\n}`];
     })
   );

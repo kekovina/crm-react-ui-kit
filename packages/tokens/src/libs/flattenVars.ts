@@ -1,9 +1,10 @@
 type NestedTokenObj = { [key: string]: string | NestedTokenObj };
 
 /**
- * Recursively flattens a nested token object into a flat record of CSS variable name → value.
+ * Flattens a nested token object into a flat record of CSS variable name → value.
  * Keys are joined with `-`.
- * @example { color: { light: { azure: { 50: '#fff' } } } } → { 'color-light-azure-50': '#fff' }
+ * @example
+ * { color: { light: { azure: { 50: '#fff' } } } } → { 'color-light-azure-50': '#fff' }
  */
 export function flattenVars(
   obj: NestedTokenObj,

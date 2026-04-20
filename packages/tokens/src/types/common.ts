@@ -4,8 +4,10 @@ import {
   SemanticTokens,
   SemanticTokenPath,
 } from '@/types/semantic';
-import { ColorValue } from './color';
+
 import { PrimitivePath } from '@/design/primitives';
+
+import { ColorValue } from './color';
 
 export type ThemeConfig = BaseThemeConfig | UiKitThemeConfig;
 

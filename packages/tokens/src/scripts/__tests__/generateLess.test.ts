@@ -1,10 +1,14 @@
 jest.mock('@/design/primitives', () => ({
   __esModule: true,
-  primitives: require('./__fixtures__/tokens').mockPrimitives,
+  primitives: jest.requireActual<typeof import('./__fixtures__/tokens')>(
+    './__fixtures__/tokens'
+  ).mockPrimitives,
 }));
 jest.mock('@/design/themes', () => ({
   __esModule: true,
-  themes: require('./__fixtures__/tokens').mockThemes,
+  themes: jest.requireActual<typeof import('./__fixtures__/tokens')>(
+    './__fixtures__/tokens'
+  ).mockThemes,
 }));
 
 import { collectPrimitives, collectThemes } from '@/scripts/collectTokens';

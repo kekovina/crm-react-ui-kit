@@ -15,6 +15,7 @@ export function generateThemesTs(): Record<string, string> {
       const lines = [
         `${HEADER}export const semantic = ${JSON.stringify(semantic, null, 2)} as const;`,
       ].join('\n');
+
       return [theme.id, lines];
     })
   );

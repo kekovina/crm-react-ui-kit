@@ -3,11 +3,11 @@ import cx from 'classnames';
 
 import { useThemeClassName } from '@/hooks/useThemeClassName';
 
-import { noop } from '@/utils';
-
 import { mergeRefs } from '@/lib/utils';
 
 import { CustomScrollClassName } from '@/stylesheets/utils/BaseClasses';
+
+import { noop } from '@/utils';
 
 import { Text } from '../Text/Text';
 

@@ -23,6 +23,7 @@ function semanticToDTO(node: unknown): DTCGNode {
     const value = isRawColorValue(node as Parameters<typeof isRawColorValue>[0])
       ? node
       : `{${node}}`;
+
     return { $type: 'color', $value: value };
   }
 
@@ -44,6 +45,7 @@ export function generateThemesJson(): Record<string, string> {
       const dto: DTCGNode = {
         semantic: semanticToDTO(theme.semanticTokens),
       };
+
       return [theme.id, JSON.stringify(dto, null, 2)];
     })
   );

@@ -3,9 +3,9 @@ import cx from 'classnames';
 
 import { useThemeClassName } from '@/hooks/useThemeClassName';
 
-import { noop } from '@/utils';
-
 import { Spinner, type SpinnerTheme } from '@/components/Spinner';
+
+import { noop } from '@/utils';
 
 import { useShowInvalidAnimation, useShowSuccessfulState } from './hooks';
 
