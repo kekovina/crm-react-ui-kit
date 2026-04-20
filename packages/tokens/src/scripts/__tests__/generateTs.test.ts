@@ -2,11 +2,11 @@ import { mockPrimitives } from './__fixtures__/tokens';
 
 jest.mock('@/design/primitives', () => ({
   __esModule: true,
-  default: require('./__fixtures__/tokens').mockPrimitives,
+  primitives: require('./__fixtures__/tokens').mockPrimitives,
 }));
 jest.mock('@/design/themes', () => ({
   __esModule: true,
-  default: require('./__fixtures__/tokens').mockThemes,
+  themes: require('./__fixtures__/tokens').mockThemes,
 }));
 
 import { generatePrimitivesTs, generateThemesTs } from '@/scripts/generateTs';
