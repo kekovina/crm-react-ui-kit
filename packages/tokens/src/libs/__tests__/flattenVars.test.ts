@@ -1,4 +1,4 @@
-import flattenVars from '@/libs/flattenVars';
+import { flattenVars } from '@/libs/flattenVars';
 
 describe('flattenVars', () => {
   it('flattens a nested object into dash-joined keys', () => {
