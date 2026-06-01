@@ -2,6 +2,7 @@ import React, { type FC } from 'react';
 import { Source } from '@storybook/blocks';
 
 import { Appearance } from 'src';
+
 import { initialTheme } from '@storybook-utils/utils';
 
 import { CodeBlockProps } from './CodeBlock.props';

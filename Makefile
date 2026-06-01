@@ -1,25 +1,16 @@
-DATE:=$(shell date +%Y_%m_%d_%H_%M_%S)
+.PHONY: patch minor storybook build-storybook push-storybook
 
 patch:
-	yarn lint
-	npm version patch
-	npm login
-	yarn build
-	npm publish
-	make storybook
+	$(MAKE) -C packages/ui-kit patch
 
 minor:
-	yarn lint
-	npm version minor
-	npm login
-	yarn build
-	npm publish
-	make storybook
+	$(MAKE) -C packages/ui-kit minor
 
-storybook: build-storybook storybook-push
+storybook:
+	$(MAKE) -C packages/storybook storybook
 
 build-storybook:
-	docker build -t ${REGISTRY_URL}/crm-react-ui-kit:build_${DATE} --platform linux/amd64 .
+	$(MAKE) -C packages/storybook build-storybook
 
 push-storybook:
-	docker push ${REGISTRY_URL}/crm-react-ui-kit:build_${DATE}
+	$(MAKE) -C packages/storybook push-storybook

@@ -7,7 +7,7 @@ import {
   Langs,
 } from '../storybook/utils';
 
-import locales from '../locales';
+import locales from '../../ui-kit/locales';
 
 i18n.use(LanguageDetector).init({
   supportedLngs: SUPPORTED_LANGUAGES,
